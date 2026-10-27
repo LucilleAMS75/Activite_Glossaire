@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --accent: #810464;
+    --accent-hover: #670350;
+    --accent-light: #fcf4fa;
+    --accent-border: #e8b1dc;
+  }
+
+  body {
+    font-family: 'Fira Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom accent utility classes */
+.bg-accent { background-color: #810464; }
+.bg-accent-hover:hover { background-color: #670350; }
+.bg-accent-light { background-color: #fcf4fa; }
+.text-accent { color: #810464; }
+.border-accent { border-color: #810464; }
+.ring-accent:focus { --tw-ring-color: #810464; }
+
+/* 3D Flashcard Flip Mechanics */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Print Optimization Stylesheet */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  /* Hide interactive non-printable elements */
+  .no-print,
+  button,
+  input,
+  select,
+  .search-container,
+  .alphabet-nav,
+  .action-bar,
+  .modal-overlay,
+  .view-toggle {
+    display: none !important;
+  }
+
+  /* Show print-only header */
+  .print-only-header {
+    display: block !important;
+    border-bottom: 2px solid #810464;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  /* Format cards for print */
+  .print-glossary-list {
+    display: block !important;
+  }
+
+  .print-glossary-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .print-term {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #810464 !important;
+  }
+
+  .print-def {
+    font-size: 10.5pt;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* Force display of both front and back content in print view */
+  .flashcard-wrapper {
+    display: none !important;
+  }
+}

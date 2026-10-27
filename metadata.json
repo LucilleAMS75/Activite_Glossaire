@@ -1,0 +1,6 @@
+{
+  "name": "Glossaire Interactif - Communication Numérique",
+  "description": "Activité pédagogique interactive de type glossaire avec cartes flash 3D, recherche alphabétique, ajouts personnels, import Excel/CSV et export PDF/Impression.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
